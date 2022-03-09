@@ -19,4 +19,17 @@ h2 {
 .grid {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly; /* espaçadas de uma forma igual */
+}
+
+.celula {
+    width: 75px; /*Altura*/
+    height: 65px; /*Largura*/
+    font-size: 30pt; /*Tamanho da Fonte*/
+    margin: 4px 2px; /*Margem entre elas*/
+    font-weight: 300; /*Espessura das fontes*/
+    padding-top: 10px; /*espaçamento interno*/
+    border-radius: 3px;
+    text-align: center; /*todo X e O ficarão no centro das celulas*/
+    background-color: darksalmon;
 }
