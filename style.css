@@ -15,7 +15,8 @@ h2 {
     max-width: 240px; 
 }
 
-/* Como as celulas irão ser posicionadas */
+/* Como as celulas irão ser posicionadas, o wrap, quebra a linha, quando não couber mais na largura */
 .grid {
-
+    display: flex;
+    flex-flow: row wrap;
 }
