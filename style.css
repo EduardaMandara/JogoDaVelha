@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans&display=swap');
+/* Usams o @import para importar uma fonte externa, no nosso caso agora, do google */
+
+body {
+    font-family: "Smooch Sans";
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Contem todas as 8 caixas do nosso jogo */
+.container {
+    margin: 0 auto;
+    max-width: 240px; 
+}
+
+/* Como as celulas irão ser posicionadas */
+.grid {
+
+}
