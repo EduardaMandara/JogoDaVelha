@@ -13,6 +13,10 @@ h2 {
 .container {
     margin: 0 auto;
     max-width: 240px; 
+    padding: 20px;
+    border-radius: 10px;
+    background-color: bisque;
+    border: 3px solid grey;
 }
 
 /* Como as celulas irão ser posicionadas, o wrap, quebra a linha, quando não couber mais na largura */
