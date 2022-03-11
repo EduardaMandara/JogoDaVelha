@@ -16,6 +16,7 @@ document.addEventListener("click", (event) => {
     }
 });
 
+//Checagem dos jogadores.
 function jogar(id) {
     const celula = document.getElementById(id);
 
@@ -27,4 +28,10 @@ function jogar(id) {
 
     //joga a vez para o oposto do checarTurno. 
     checarTurno = !checarTurno;
+    checarVencedor(turno)
+}
+
+//Checagem do vencedor
+function checarVencedor(turno) {
+
 }
