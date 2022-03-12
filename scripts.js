@@ -16,7 +16,7 @@ const COMBINACOES = [
     [2,5,8],
 
     [0,4,8],
-    [2,4,6],
+    [2,4,6]
 ]
 
 // Elemento de interação, neste caso usaremos o evento Click.
@@ -60,6 +60,34 @@ function checarVencedor(turno) {
         encerrarJogo();
     } else {
         checarTurno = !checarTurno;
+    }
+
+}
+
+function checarEmpate(){
+    let x = 0;
+    let o = 0;
+
+    for (index in celulas){
+        if(!isNaN(index)){
+            if (celulas[index].classList.contains(JOGADOR_X)) {
+                x++;
+            }
+
+            if(celulas[index].classList.contains(JOGADOR_O)) {
+                o++;
+            }
+        }
+    }    
+    return x + o === 9 ? true : false;
+}
+
+//se vier com parametro, prossegue vencedor, se não tiver parametro, será mantido nulo(null)
+function encerrarJogo(vencedor = null) {
+    if(vencedor){
+        console.log("Vencedor: " + vencedor)
+    } else {
+        console.log("Empatou");
     }
 
 }
