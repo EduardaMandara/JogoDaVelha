@@ -6,6 +6,18 @@ let checarTurno = true;
 
 const JOGADOR_X = "X";
 const JOGADOR_O = "O";
+const COMBINACOES = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+
+    [0,4,8],
+    [2,4,6],
+]
 
 // Elemento de interação, neste caso usaremos o evento Click.
 document.addEventListener("click", (event) => {
@@ -26,12 +38,28 @@ function jogar(id) {
     //depois de verificar de quem é a vez, ele irá atribuir cada caractere para o jogador da vez. 
     celula.textContent = turno;
 
+    //verificar se aquela celula pertence aquele jogador. 
+    celula.classList.add(turno);
+
     //joga a vez para o oposto do checarTurno. 
-    checarTurno = !checarTurno;
-    checarVencedor(turno)
+    checarVencedor(turno);
 }
 
 //Checagem do vencedor
 function checarVencedor(turno) {
+    const vencedor = COMBINACOES.some((comb) => {
+        return comb.every((index) => {
+            return celulas[index].classList.contains(turno);
+        })
+        //some: se alguma das posições retornar true, todas irão ser true | Every: todas precisam ser true, se alguma não retornar true, todas irão retornar false.
+    });
+
+    if (vencedor){
+        encerrarJogo(turno);
+    } else if (checarEmpate()) {
+        encerrarJogo();
+    } else {
+        checarTurno = !checarTurno;
+    }
 
 }
